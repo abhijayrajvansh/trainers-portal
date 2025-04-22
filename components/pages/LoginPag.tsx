@@ -10,9 +10,21 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const LoginPage = () => {
   const [userType, setUserType] = React.useState("trainer");
+  const router = useRouter();
+
+  const handleRedirectToDashboard = () => {
+    if (userType === "trainer") {
+      router.push("/profile");
+    } else {
+      router.push("/dashboard");
+    }
+  }
+
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-background">
@@ -51,7 +63,7 @@ const LoginPage = () => {
               <div className="space-y-2">
                 <Input type="password" placeholder="Password" />
               </div>
-              <Button className="w-full">
+              <Button onClick={handleRedirectToDashboard} className="w-full">
                 Sign in as {userType === "trainer" ? "Trainer" : "Admin"}
               </Button>
 
@@ -59,9 +71,9 @@ const LoginPage = () => {
                 <span className="text-muted-foreground">
                   Don't have an account?{" "}
                 </span>
-                <Button variant="link" className="p-0 h-auto font-normal">
+                <Link href="/register" className="text-primary hover:underline">
                   Register here
-                </Button>
+                </Link>
               </div>
             </form>
           </CardContent>
