@@ -152,7 +152,7 @@ export function TrainerTable({
 
   const handleExpertiseFilter = (values: number[]) => {
     setExpertiseFilter(values[0]);
-    table.getColumn("adminMetadata.expertiseScore")?.setFilterValue(values[0]);
+    table.getColumn("expertiseScore")?.setFilterValue(values[0]);
   };
 
   const columns: ColumnDef<TrainerData>[] = [
@@ -261,7 +261,7 @@ export function TrainerTable({
       ),
     },
     {
-      accessorKey: "adminMetadata.expertiseScore",
+      accessorKey: "expertiseScore",
       header: "Expertise",
       cell: ({ row }) => (
         <div className="text-right font-medium">
