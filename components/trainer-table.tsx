@@ -301,6 +301,9 @@ export function TrainerTable({
       sortingFn: (rowA, rowB) =>
         rowA.original.adminMetadata.expertiseScore -
         rowB.original.adminMetadata.expertiseScore,
+      filterFn: (row, id, filterValue) => {
+        return row.original.adminMetadata.expertiseScore >= filterValue;
+      }
     },
     {
       id: "actions",
