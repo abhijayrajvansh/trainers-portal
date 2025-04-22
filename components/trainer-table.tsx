@@ -261,18 +261,46 @@ export function TrainerTable({
       ),
     },
     {
+      accessorKey: "priority",
+      header: ({ column }) => (
+        <Button
+          variant="ghost"
+          className="p-0"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          Priority
+          <ChevronDownIcon className="ml-2 h-4 w-4" />
+        </Button>
+      ),
+      cell: ({ row }) => (
+        <div className="text-right font-medium">
+          {row.original.adminMetadata.priority}/100
+        </div>
+      ),
+      sortingFn: (rowA, rowB) =>
+        rowA.original.adminMetadata.priority -
+        rowB.original.adminMetadata.priority,
+    },
+    {
       accessorKey: "expertiseScore",
-      header: "Expertise",
+      header: ({ column }) => (
+        <Button
+          variant="ghost"
+          className="p-0"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          Expertise
+          <ChevronDownIcon className="ml-2 h-4 w-4" />
+        </Button>
+      ),
       cell: ({ row }) => (
         <div className="text-right font-medium">
           {row.original.adminMetadata.expertiseScore}/100
         </div>
       ),
-      filterFn: (row, id, filterValue) => {
-        return (
-          row.original.adminMetadata.expertiseScore >= (filterValue as number)
-        );
-      },
+      sortingFn: (rowA, rowB) =>
+        rowA.original.adminMetadata.expertiseScore -
+        rowB.original.adminMetadata.expertiseScore,
     },
     {
       id: "actions",
