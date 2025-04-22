@@ -1,20 +1,21 @@
-'use client'
+"use client";
 
 import React, { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { useRouter } from "next/navigation";
 
 const Register = () => {
   const [formData, setFormData] = useState({
-    fullName: "",
-    email: "",
-    phone: "",
-    specialization: "",
-    experience: "",
-    password: "",
-    confirmPassword: "",
+    fullName: "John Doe",
+    email: "johndoe@gameofthrones.com",
+    phone: "+91 1234567890",
+    specialization: "DevOps, Terraform, AWS, Kubernetes",
+    experience: "5",
+    password: "123456",
+    confirmPassword: "123456",
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -29,6 +30,12 @@ const Register = () => {
     e.preventDefault();
     // TODO: Add validation and API integration
     console.log("Form submitted:", formData);
+  };
+
+  const router = useRouter();
+
+  const handleRegister = () => {
+    router.push("/profile");
   };
 
   return (
@@ -129,7 +136,7 @@ const Register = () => {
             />
           </div>
 
-          <Button type="submit" className="w-full">
+          <Button onClick={handleRegister} type="submit" className="w-full">
             Register
           </Button>
         </form>
@@ -137,5 +144,4 @@ const Register = () => {
     </div>
   );
 };
-
 export default Register;

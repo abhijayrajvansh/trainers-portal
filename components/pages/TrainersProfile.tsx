@@ -14,7 +14,7 @@ const mockTrainerData = {
   email: "john@example.com",
   phone: "+1 (555) 000-0000",
   avatar: "/avatars/trainer1.jpg",
-  skills: ["Strength Training", "HIIT", "Yoga"],
+  skills: ["DevOps", "Terraform", "AWS", "Kubernetes"],
   experience: "5 years",
   specialization: "Strength & Conditioning",
   availability: "Mon-Fri, 9AM-5PM",
@@ -24,6 +24,8 @@ const mockTrainerData = {
   },
   certificates: ["ACE Certified Personal Trainer", "CrossFit Level 1"],
   linkedin: "https://linkedin.com/in/johndoe",
+
+  certifications: ["ACE Certified Personal Trainer", "CrossFit Level 1"],
 };
 
 const TrainersProfile = () => {
