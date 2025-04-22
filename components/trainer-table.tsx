@@ -72,7 +72,7 @@ export function TrainerTable({ data, onRowClick }: TrainerTableProps) {
                 ${trainer.pricing.hourly}/hr | ${trainer.pricing.daily}/day
               </TableCell>
               <TableCell>{trainer.availability}</TableCell>
-              <TableCell>{trainer.travelPreference}</TableCell>
+              <TableCell>{trainer.travelPreference === "Remote" ? "No" : "Yes"}</TableCell>
             </TableRow>
           ))}
         </TableBody>

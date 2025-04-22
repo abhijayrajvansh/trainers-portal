@@ -122,7 +122,7 @@ export function Dashboard() {
               <div>
                 <h3 className="font-medium mb-2">Availability & Preferences</h3>
                 <p>Availability: {selectedTrainer.availability}</p>
-                <p>Travel Preference: {selectedTrainer.travelPreference}</p>
+                <p>Willing to Travel: {selectedTrainer.travelPreference === "Remote" ? "No" : "Yes"}</p>
               </div>
 
               <div className="border-t pt-4 mt-6">
