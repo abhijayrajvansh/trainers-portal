@@ -1,10 +1,7 @@
 "use client";
 
-import { AppSidebar } from "@/components/app-sidebar";
-import { SiteHeader } from "@/components/site-header";
-import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
-import { TrainerTable } from "@/components/trainer-table";
-import jsonData from "./data.json";
+import { DataTable } from "@/components/data-table";
+import data from "@/app/dashboard/data.json";
 import { useState } from "react";
 import {
   Drawer,
@@ -15,6 +12,7 @@ import {
   DrawerFooter,
 } from "@/components/ui/drawer";
 import { Badge } from "@/components/ui/badge";
+import { TrainerTable } from "@/components/trainer-table";
 
 interface TrainerData {
   id: number;
@@ -41,31 +39,24 @@ interface TrainerData {
   };
 }
 
-export default function Page() {
+interface DataShape {
+  trainers: TrainerData[];
+}
+
+export function Dashboard() {
   const [selectedTrainer, setSelectedTrainer] = useState<TrainerData | null>(
     null
   );
-  const trainers = (jsonData as any).trainers as TrainerData[];
+  const trainers = (data as DataShape).trainers;
 
   return (
-    <SidebarProvider
-      style={
-        {
-          "--sidebar-width": "calc(var(--spacing) * 72)",
-          "--header-height": "calc(var(--spacing) * 12)",
-        } as React.CSSProperties
-      }
-    >
-      <AppSidebar variant="inset" />
-      <SidebarInset>
-        <SiteHeader />
-        <div className="flex flex-1 flex-col gap-4 p-4 md:gap-8 md:p-10">
-          <div className="flex items-center justify-between">
-            <h1 className="text-2xl font-semibold">Trainers Dashboard</h1>
-          </div>
+    <div className="flex flex-1 flex-col">
+      <div className="@container/main flex flex-1 flex-col gap-2">
+        <div className="flex flex-col gap-4 py-4 md:gap-6 md:py-6">
+          <div className="px-4 lg:px-6"></div>
           <TrainerTable data={trainers} onRowClick={setSelectedTrainer} />
         </div>
-      </SidebarInset>
+      </div>
 
       <Drawer
         open={selectedTrainer !== null}
@@ -181,6 +172,6 @@ export default function Page() {
           </DrawerFooter>
         </DrawerContent>
       </Drawer>
-    </SidebarProvider>
+    </div>
   );
 }
