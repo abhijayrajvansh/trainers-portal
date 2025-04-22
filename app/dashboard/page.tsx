@@ -7,14 +7,16 @@ import { TrainerTable } from "@/components/trainer-table";
 import jsonData from "./data.json";
 import { useState } from "react";
 import {
-  Drawer,
-  DrawerContent,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerDescription,
-  DrawerFooter,
-} from "@/components/ui/drawer";
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetDescription,
+  SheetFooter,
+  SheetClose,
+} from "@/components/ui/sheet";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 
 interface TrainerData {
   id: number;
@@ -67,120 +69,116 @@ export default function Page() {
         </div>
       </SidebarInset>
 
-      <Drawer
-        open={selectedTrainer !== null}
-        onOpenChange={() => setSelectedTrainer(null)}
-      >
-        <DrawerContent>
-          <DrawerHeader>
-            <DrawerTitle>{selectedTrainer?.name}</DrawerTitle>
-            <DrawerDescription>Trainer Profile Details</DrawerDescription>
-          </DrawerHeader>
+      <Sheet open={selectedTrainer !== null} onOpenChange={() => setSelectedTrainer(null)}>
+        <SheetContent side="right" className="w-full sm:max-w-xl">
+          <SheetHeader>
+            <SheetTitle>{selectedTrainer?.name}</SheetTitle>
+            <SheetDescription>Trainer Profile Details</SheetDescription>
+          </SheetHeader>
           {selectedTrainer && (
-            <div className="px-4 py-2 space-y-4">
-              <div>
-                <h3 className="font-medium mb-2">Contact Information</h3>
-                <p>Phone: {selectedTrainer.phone}</p>
-                <p>Email: {selectedTrainer.email}</p>
-                <p>
-                  LinkedIn:{" "}
-                  <a
-                    href={selectedTrainer.linkedin}
-                    className="text-blue-600 hover:underline"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Profile
-                  </a>
-                </p>
-              </div>
-
-              <div>
-                <h3 className="font-medium mb-2">Skills</h3>
-                <div className="flex flex-wrap gap-2">
-                  {selectedTrainer.skills.map((skill, index) => (
-                    <Badge key={index} variant="secondary">
-                      {skill}
-                    </Badge>
-                  ))}
+            <div className="flex flex-col gap-6 py-4">
+              <div className="space-y-4">
+                <div>
+                  <h3 className="font-medium mb-2">Contact Information</h3>
+                  <div className="space-y-2">
+                    <p>Phone: {selectedTrainer.phone}</p>
+                    <p>Email: {selectedTrainer.email}</p>
+                    <p>
+                      LinkedIn:{" "}
+                      <a
+                        href={selectedTrainer.linkedin}
+                        className="text-blue-600 hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Profile
+                      </a>
+                    </p>
+                  </div>
                 </div>
-              </div>
 
-              <div>
-                <h3 className="font-medium mb-2">
-                  Experience & Certifications
-                </h3>
-                {selectedTrainer.pastExperience && (
-                  <p className="mb-2">{selectedTrainer.pastExperience}</p>
-                )}
-                <div className="flex flex-wrap gap-2">
-                  {selectedTrainer.certificates.map((cert, index) => (
-                    <Badge key={index} variant="outline">
-                      {cert}
-                    </Badge>
-                  ))}
+                <div>
+                  <h3 className="font-medium mb-2">Skills</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {selectedTrainer.skills.map((skill, index) => (
+                      <Badge key={index} variant="secondary">
+                        {skill}
+                      </Badge>
+                    ))}
+                  </div>
                 </div>
-              </div>
 
-              <div>
-                <h3 className="font-medium mb-2">Pricing</h3>
-                <p>Hourly Rate: ${selectedTrainer.pricing.hourly}</p>
-                <p>Daily Rate: ${selectedTrainer.pricing.daily}</p>
-              </div>
+                <div>
+                  <h3 className="font-medium mb-2">Experience & Certifications</h3>
+                  {selectedTrainer.pastExperience && (
+                    <p className="mb-2">{selectedTrainer.pastExperience}</p>
+                  )}
+                  <div className="flex flex-wrap gap-2">
+                    {selectedTrainer.certificates.map((cert, index) => (
+                      <Badge key={index} variant="outline">
+                        {cert}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
 
-              <div>
-                <h3 className="font-medium mb-2">Availability & Preferences</h3>
-                <p>Availability: {selectedTrainer.availability}</p>
-                <p>Travel Preference: {selectedTrainer.travelPreference}</p>
-              </div>
+                <div>
+                  <h3 className="font-medium mb-2">Pricing</h3>
+                  <div className="space-y-1">
+                    <p>Hourly Rate: ${selectedTrainer.pricing.hourly}</p>
+                    <p>Daily Rate: ${selectedTrainer.pricing.daily}</p>
+                  </div>
+                </div>
 
-              <div className="border-t pt-4 mt-6">
-                <h3 className="font-medium mb-2">Admin Section</h3>
-                <div className="space-y-2">
-                  <p>
-                    Communication Score:{" "}
-                    {selectedTrainer.adminMetadata.communicationScore}/100
-                  </p>
-                  <p>
-                    Expertise Score:{" "}
-                    {selectedTrainer.adminMetadata.expertiseScore}/100
-                  </p>
-                  <p>
-                    Priority Level: {selectedTrainer.adminMetadata.priority}/100
-                  </p>
-                  {selectedTrainer.adminMetadata.redFlags.length > 0 && (
-                    <div>
-                      <p className="text-red-600 font-medium">Red Flags:</p>
-                      <ul className="list-disc list-inside">
-                        {selectedTrainer.adminMetadata.redFlags.map(
-                          (flag, index) => (
+                <div>
+                  <h3 className="font-medium mb-2">Availability & Preferences</h3>
+                  <div className="space-y-1">
+                    <p>Availability: {selectedTrainer.availability}</p>
+                    <p>Travel Preference: {selectedTrainer.travelPreference}</p>
+                  </div>
+                </div>
+
+                <div className="border-t pt-4">
+                  <h3 className="font-medium mb-2">Admin Section</h3>
+                  <div className="space-y-2">
+                    <p>Communication Score: {selectedTrainer.adminMetadata.communicationScore}/100</p>
+                    <p>Expertise Score: {selectedTrainer.adminMetadata.expertiseScore}/100</p>
+                    <p>Priority Level: {selectedTrainer.adminMetadata.priority}/100</p>
+                    {selectedTrainer.adminMetadata.redFlags.length > 0 && (
+                      <div>
+                        <p className="text-red-600 font-medium">Red Flags:</p>
+                        <ul className="list-disc list-inside">
+                          {selectedTrainer.adminMetadata.redFlags.map((flag, index) => (
                             <li key={index} className="text-red-600">
                               {flag}
                             </li>
-                          )
-                        )}
-                      </ul>
-                    </div>
-                  )}
-                  <p className="text-sm text-gray-600 mt-2">
-                    {selectedTrainer.adminMetadata.comments}
-                  </p>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                    <p className="text-sm text-gray-600 mt-2">
+                      {selectedTrainer.adminMetadata.comments}
+                    </p>
+                  </div>
                 </div>
               </div>
+              <SheetFooter>
+                <SheetClose asChild>
+                  <Button variant="outline" className="w-full">Done</Button>
+                </SheetClose>
+                <a
+                  href={selectedTrainer.resume}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full"
+                >
+                  <Button className="w-full">View Resume</Button>
+                </a>
+              </SheetFooter>
             </div>
           )}
-          <DrawerFooter>
-            <a
-              href={selectedTrainer?.resume}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
-            >
-              View Resume
-            </a>
-          </DrawerFooter>
-        </DrawerContent>
-      </Drawer>
+        </SheetContent>
+      </Sheet>
     </SidebarProvider>
   );
 }
