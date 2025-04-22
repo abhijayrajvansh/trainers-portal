@@ -73,6 +73,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 
 interface TrainerData {
   id: number;
@@ -138,6 +139,12 @@ export function TrainerTable({
     pageIndex: 0,
     pageSize: 10,
   });
+  const [availabilityFilter, setAvailabilityFilter] = React.useState<string[]>([]);
+
+  const handleAvailabilityFilter = (values: string[]) => {
+    setAvailabilityFilter(values);
+    table.getColumn("availability")?.setFilterValue(values);
+  };
 
   const columns: ColumnDef<TrainerData>[] = [
     {
@@ -205,10 +212,10 @@ export function TrainerTable({
       ),
       filterFn: (row, id, filterValue) => {
         const searchTerm = (filterValue as string).toLowerCase();
-        return row.original.skills.some(skill => 
+        return row.original.skills.some((skill) =>
           skill.toLowerCase().includes(searchTerm)
         );
-      }
+      },
     },
     {
       accessorKey: "availability",
@@ -218,6 +225,10 @@ export function TrainerTable({
           {row.original.availability}
         </Badge>
       ),
+      filterFn: (row, id, filterValue) => {
+        const selectedAvailabilities = filterValue as string[];
+        return selectedAvailabilities.length === 0 || selectedAvailabilities.includes(row.original.availability);
+      },
     },
     {
       accessorKey: "pricing.hourly",
@@ -347,56 +358,98 @@ export function TrainerTable({
 
   return (
     <div className="flex flex-col gap-4">
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <Input
-            placeholder="Filter by name..."
-            value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}
-            onChange={(event) =>
-              table.getColumn("name")?.setFilterValue(event.target.value)
-            }
-            className="max-w-sm"
-          />
-          <Input
-            placeholder="Filter by skills..."
-            value={(table.getColumn("skills")?.getFilterValue() as string) ?? ""}
-            onChange={(event) =>
-              table.getColumn("skills")?.setFilterValue(event.target.value)
-            }
-            className="max-w-sm"
-          />
+      <div className="space-y-4">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+            <div className="flex flex-col gap-2">
+              <Label>Search by name</Label>
+              <Input
+                placeholder="Enter trainer name..."
+                value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}
+                onChange={(event) =>
+                  table.getColumn("name")?.setFilterValue(event.target.value)
+                }
+                className="w-[250px]"
+              />
+            </div>
+            
+            <div className="flex flex-col gap-2">
+              <Label>Search by skills</Label>
+              <Input
+                placeholder="React, Node.js, TypeScript..."
+                value={(table.getColumn("skills")?.getFilterValue() as string) ?? ""}
+                onChange={(event) =>
+                  table.getColumn("skills")?.setFilterValue(event.target.value)
+                }
+                className="w-[250px]"
+              />
+            </div>
+
+            <div className="flex flex-col gap-2">
+              <Label>Availability</Label>
+              <ToggleGroup
+                type="multiple"
+                value={availabilityFilter}
+                onValueChange={handleAvailabilityFilter}
+                className="flex gap-1"
+              >
+                <ToggleGroupItem 
+                  value="Flexible" 
+                  aria-label="Toggle Flexible"
+                  className="px-3 text-xs"
+                >
+                  Flexible
+                </ToggleGroupItem>
+                <ToggleGroupItem 
+                  value="Weekdays" 
+                  aria-label="Toggle Weekdays"
+                  className="px-3 text-xs"
+                >
+                  Weekdays
+                </ToggleGroupItem>
+                <ToggleGroupItem 
+                  value="Full Time" 
+                  aria-label="Toggle Full Time"
+                  className="px-3 text-xs"
+                >
+                  Full Time
+                </ToggleGroupItem>
+              </ToggleGroup>
+            </div>
+          </div>
+
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="outline" size="sm" className="ml-auto">
+                <ColumnsIcon className="mr-2 size-4" />
+                View
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="w-[150px]">
+              {table
+                .getAllColumns()
+                .filter(
+                  (column) =>
+                    typeof column.accessorFn !== "undefined" &&
+                    column.getCanHide()
+                )
+                .map((column) => {
+                  return (
+                    <DropdownMenuCheckboxItem
+                      key={column.id}
+                      className="capitalize"
+                      checked={column.getIsVisible()}
+                      onCheckedChange={(value) =>
+                        column.toggleVisibility(!!value)
+                      }
+                    >
+                      {column.id}
+                    </DropdownMenuCheckboxItem>
+                  );
+                })}
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="outline" size="sm">
-              <ColumnsIcon className="mr-2 size-4" />
-              View
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end" className="w-[150px]">
-            {table
-              .getAllColumns()
-              .filter(
-                (column) =>
-                  typeof column.accessorFn !== "undefined" &&
-                  column.getCanHide()
-              )
-              .map((column) => {
-                return (
-                  <DropdownMenuCheckboxItem
-                    key={column.id}
-                    className="capitalize"
-                    checked={column.getIsVisible()}
-                    onCheckedChange={(value) =>
-                      column.toggleVisibility(!!value)
-                    }
-                  >
-                    {column.id}
-                  </DropdownMenuCheckboxItem>
-                );
-              })}
-          </DropdownMenuContent>
-        </DropdownMenu>
       </div>
       <div className="rounded-md border">
         <DndContext
