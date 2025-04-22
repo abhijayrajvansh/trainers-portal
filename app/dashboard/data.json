@@ -47,6 +47,1161 @@
         "priority": 85,
         "comments": "Strong technical background in AI/ML"
       }
+    },
+    {
+      "id": 3,
+      "name": "Sarah Chen",
+      "phone": "+1 (555) 345-6789",
+      "email": "sarah.chen@example.com",
+      "skills": ["Angular", "AWS", "Java", "Spring Boot"],
+      "resume": "https://example.com/resume/sarah-chen",
+      "linkedin": "https://linkedin.com/in/sarah-chen",
+      "pastExperience": "12 years of enterprise development",
+      "certificates": ["Java Champion", "AWS Solutions Architect"],
+      "pricing": {
+        "hourly": 165,
+        "daily": 1100
+      },
+      "availability": "Weekdays",
+      "travelPreference": "On-site",
+      "adminMetadata": {
+        "communicationScore": 92,
+        "expertiseScore": 94,
+        "redFlags": [],
+        "priority": 85,
+        "comments": "Strong enterprise background and leadership skills"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Marcus Rodriguez",
+      "phone": "+1 (555) 456-7890",
+      "email": "m.rodriguez@example.com",
+      "skills": ["Vue.js", "PHP", "Laravel", "MySQL"],
+      "resume": "https://example.com/resume/marcus-rodriguez",
+      "linkedin": "https://linkedin.com/in/mrodriguez",
+      "pastExperience": "6 years of full-stack development",
+      "certificates": ["Laravel Certified Developer", "MySQL DBA"],
+      "pricing": {
+        "hourly": 120,
+        "daily": 900
+      },
+      "availability": "Flexible",
+      "travelPreference": "Remote",
+      "adminMetadata": {
+        "communicationScore": 89,
+        "expertiseScore": 87,
+        "redFlags": [],
+        "priority": 75,
+        "comments": "Reliable developer with good project delivery track record"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Priya Patel",
+      "phone": "+1 (555) 567-8901",
+      "email": "priya.p@example.com",
+      "skills": ["React Native", "iOS", "Android", "Flutter"],
+      "resume": "https://example.com/resume/priya-patel",
+      "linkedin": "https://linkedin.com/in/priya-p",
+      "pastExperience": "7 years in mobile development",
+      "certificates": ["Google Associate Android Developer", "iOS Development"],
+      "pricing": {
+        "hourly": 145,
+        "daily": 1000
+      },
+      "availability": "Full Time",
+      "travelPreference": "Hybrid",
+      "adminMetadata": {
+        "communicationScore": 94,
+        "expertiseScore": 91,
+        "redFlags": [],
+        "priority": 82,
+        "comments": "Expert in cross-platform mobile development"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Klaus Mueller",
+      "phone": "+1 (555) 678-9012",
+      "email": "klaus.m@example.com",
+      "skills": ["Kubernetes", "Docker", "DevOps", "AWS"],
+      "resume": "https://example.com/resume/klaus-mueller",
+      "linkedin": "https://linkedin.com/in/klaus-m",
+      "pastExperience": "9 years in DevOps and cloud architecture",
+      "certificates": ["CKA", "AWS DevOps Professional"],
+      "pricing": {
+        "hourly": 180,
+        "daily": 1300
+      },
+      "availability": "Weekdays",
+      "travelPreference": "Remote",
+      "adminMetadata": {
+        "communicationScore": 88,
+        "expertiseScore": 96,
+        "redFlags": [],
+        "priority": 88,
+        "comments": "Outstanding DevOps expertise and cloud architecture skills"
+      }
+    },
+    {
+      "id": 7,
+      "name": "Nina Williams",
+      "phone": "+1 (555) 789-0123",
+      "email": "nina.w@example.com",
+      "skills": ["UI/UX Design", "Figma", "Adobe XD", "React"],
+      "resume": "https://example.com/resume/nina-williams",
+      "linkedin": "https://linkedin.com/in/nina-w",
+      "pastExperience": "5 years in UI/UX and frontend development",
+      "certificates": ["Google UX Design", "React Certification"],
+      "pricing": {
+        "hourly": 135,
+        "daily": 950
+      },
+      "availability": "Flexible",
+      "travelPreference": "Hybrid",
+      "adminMetadata": {
+        "communicationScore": 96,
+        "expertiseScore": 89,
+        "redFlags": [],
+        "priority": 78,
+        "comments": "Great eye for design and strong frontend skills"
+      }
+    },
+    {
+      "id": 8,
+      "name": "Alex Thompson",
+      "phone": "+1 (555) 890-1234",
+      "email": "alex.t@example.com",
+      "skills": ["C++", "Game Development", "Unity", "Unreal Engine"],
+      "resume": "https://example.com/resume/alex-thompson",
+      "linkedin": "https://linkedin.com/in/alex-t",
+      "pastExperience": "11 years in game development",
+      "certificates": ["Unity Certified Developer", "Unreal Engine Expert"],
+      "pricing": {
+        "hourly": 160,
+        "daily": 1150
+      },
+      "availability": "Full Time",
+      "travelPreference": "On-site",
+      "adminMetadata": {
+        "communicationScore": 87,
+        "expertiseScore": 93,
+        "redFlags": [],
+        "priority": 83,
+        "comments": "Extensive game development experience"
+      }
+    },
+    {
+      "id": 9,
+      "name": "Maria Garcia",
+      "phone": "+1 (555) 901-2345",
+      "email": "maria.g@example.com",
+      "skills": ["Data Engineering", "Apache Spark", "Python", "Scala"],
+      "resume": "https://example.com/resume/maria-garcia",
+      "linkedin": "https://linkedin.com/in/maria-g",
+      "pastExperience": "8 years in big data",
+      "certificates": ["Databricks Certified", "Google Data Engineer"],
+      "pricing": {
+        "hourly": 170,
+        "daily": 1200
+      },
+      "availability": "Weekdays",
+      "travelPreference": "Remote",
+      "adminMetadata": {
+        "communicationScore": 91,
+        "expertiseScore": 94,
+        "redFlags": [],
+        "priority": 86,
+        "comments": "Expert in big data processing and pipelines"
+      }
+    },
+    {
+      "id": 10,
+      "name": "David Kim",
+      "phone": "+1 (555) 012-3456",
+      "email": "david.k@example.com",
+      "skills": ["Blockchain", "Solidity", "Smart Contracts", "Web3"],
+      "resume": "https://example.com/resume/david-kim",
+      "linkedin": "https://linkedin.com/in/david-k",
+      "pastExperience": "4 years in blockchain development",
+      "certificates": ["Ethereum Developer", "Web3 Security"],
+      "pricing": {
+        "hourly": 190,
+        "daily": 1400
+      },
+      "availability": "Flexible",
+      "travelPreference": "Remote",
+      "adminMetadata": {
+        "communicationScore": 88,
+        "expertiseScore": 90,
+        "redFlags": [],
+        "priority": 80,
+        "comments": "Specialized in blockchain and Web3 technologies"
+      }
+    },
+    {
+      "id": 11,
+      "name": "Emma Wilson",
+      "phone": "+1 (555) 123-4567",
+      "email": "emma.w@example.com",
+      "skills": ["Ruby on Rails", "PostgreSQL", "Redis", "Sidekiq"],
+      "resume": "https://example.com/resume/emma-wilson",
+      "linkedin": "https://linkedin.com/in/emma-w",
+      "pastExperience": "6 years of backend development",
+      "certificates": ["Ruby Association Certified", "PostgreSQL Expert"],
+      "pricing": {
+        "hourly": 140,
+        "daily": 1000
+      },
+      "availability": "Weekdays",
+      "travelPreference": "Hybrid",
+      "adminMetadata": {
+        "communicationScore": 93,
+        "expertiseScore": 88,
+        "redFlags": [],
+        "priority": 77,
+        "comments": "Strong backend development skills"
+      }
+    },
+    {
+      "id": 12,
+      "name": "Carlos Martinez",
+      "phone": "+1 (555) 234-5678",
+      "email": "carlos.m@example.com",
+      "skills": ["React", "Next.js", "TailwindCSS", "GraphQL"],
+      "resume": "https://example.com/resume/carlos-martinez",
+      "linkedin": "https://linkedin.com/in/carlos-m",
+      "pastExperience": "5 years in modern web development",
+      "certificates": ["AWS Cloud Practitioner", "Meta Frontend"],
+      "pricing": {
+        "hourly": 130,
+        "daily": 950
+      },
+      "availability": "Full Time",
+      "travelPreference": "Remote",
+      "adminMetadata": {
+        "communicationScore": 90,
+        "expertiseScore": 87,
+        "redFlags": [],
+        "priority": 75,
+        "comments": "Modern web development expert"
+      }
+    },
+    {
+      "id": 13,
+      "name": "Sophie Anderson",
+      "phone": "+1 (555) 345-6789",
+      "email": "sophie.a@example.com",
+      "skills": ["Swift", "SwiftUI", "iOS", "Objective-C"],
+      "resume": "https://example.com/resume/sophie-anderson",
+      "linkedin": "https://linkedin.com/in/sophie-a",
+      "pastExperience": "7 years in iOS development",
+      "certificates": ["Apple Certified iOS Developer"],
+      "pricing": {
+        "hourly": 155,
+        "daily": 1100
+      },
+      "availability": "Weekdays",
+      "travelPreference": "Remote",
+      "adminMetadata": {
+        "communicationScore": 92,
+        "expertiseScore": 91,
+        "redFlags": [],
+        "priority": 82,
+        "comments": "iOS development specialist"
+      }
+    },
+    {
+      "id": 14,
+      "name": "Raj Sharma",
+      "phone": "+1 (555) 456-7890",
+      "email": "raj.s@example.com",
+      "skills": ["Java", "Spring Boot", "Microservices", "Kafka"],
+      "resume": "https://example.com/resume/raj-sharma",
+      "linkedin": "https://linkedin.com/in/raj-s",
+      "pastExperience": "10 years in enterprise Java",
+      "certificates": ["Spring Professional", "Kafka Developer"],
+      "pricing": {
+        "hourly": 160,
+        "daily": 1150
+      },
+      "availability": "Full Time",
+      "travelPreference": "Hybrid",
+      "adminMetadata": {
+        "communicationScore": 89,
+        "expertiseScore": 93,
+        "redFlags": [],
+        "priority": 84,
+        "comments": "Enterprise Java expert"
+      }
+    },
+    {
+      "id": 15,
+      "name": "Lisa Wang",
+      "phone": "+1 (555) 567-8901",
+      "email": "lisa.w@example.com",
+      "skills": ["React Native", "TypeScript", "Redux", "Firebase"],
+      "resume": "https://example.com/resume/lisa-wang",
+      "linkedin": "https://linkedin.com/in/lisa-w",
+      "pastExperience": "6 years in mobile development",
+      "certificates": ["Google Mobile Web Specialist"],
+      "pricing": {
+        "hourly": 145,
+        "daily": 1050
+      },
+      "availability": "Flexible",
+      "travelPreference": "Remote",
+      "adminMetadata": {
+        "communicationScore": 94,
+        "expertiseScore": 89,
+        "redFlags": [],
+        "priority": 79,
+        "comments": "Mobile development expert"
+      }
+    },
+    {
+      "id": 16,
+      "name": "Yuki Tanaka",
+      "phone": "+1 (555) 678-9012",
+      "email": "yuki.t@example.com",
+      "skills": ["Embedded Systems", "C", "IoT", "RTOS"],
+      "resume": "https://example.com/resume/yuki-tanaka",
+      "linkedin": "https://linkedin.com/in/yuki-t",
+      "pastExperience": "15 years in embedded systems",
+      "certificates": ["ARM Certified Engineer", "IoT Security Specialist"],
+      "pricing": {
+        "hourly": 175,
+        "daily": 1250
+      },
+      "availability": "Weekdays",
+      "travelPreference": "On-site",
+      "adminMetadata": {
+        "communicationScore": 87,
+        "expertiseScore": 95,
+        "redFlags": [],
+        "priority": 85,
+        "comments": "Highly experienced in embedded systems"
+      }
+    },
+    {
+      "id": 17,
+      "name": "Elena Popov",
+      "phone": "+1 (555) 789-0123",
+      "email": "elena.p@example.com",
+      "skills": ["Cybersecurity", "Penetration Testing", "Security Auditing"],
+      "resume": "https://example.com/resume/elena-popov",
+      "linkedin": "https://linkedin.com/in/elena-p",
+      "pastExperience": "9 years in cybersecurity",
+      "certificates": ["CISSP", "CEH", "OSCP"],
+      "pricing": {
+        "hourly": 185,
+        "daily": 1350
+      },
+      "availability": "Flexible",
+      "travelPreference": "Remote",
+      "adminMetadata": {
+        "communicationScore": 91,
+        "expertiseScore": 94,
+        "redFlags": [],
+        "priority": 87,
+        "comments": "Expert in security and compliance"
+      }
+    },
+    {
+      "id": 18,
+      "name": "Hassan Ahmed",
+      "phone": "+1 (555) 890-1234",
+      "email": "hassan.a@example.com",
+      "skills": ["Data Science", "NLP", "Deep Learning", "PyTorch"],
+      "resume": "https://example.com/resume/hassan-ahmed",
+      "linkedin": "https://linkedin.com/in/hassan-a",
+      "pastExperience": "7 years in AI/ML",
+      "certificates": ["Deep Learning Specialization", "NLP Certification"],
+      "pricing": {
+        "hourly": 165,
+        "daily": 1200
+      },
+      "availability": "Full Time",
+      "travelPreference": "Hybrid",
+      "adminMetadata": {
+        "communicationScore": 93,
+        "expertiseScore": 92,
+        "redFlags": [],
+        "priority": 83,
+        "comments": "Strong background in AI and NLP"
+      }
+    },
+    {
+      "id": 19,
+      "name": "Isabella Romano",
+      "phone": "+1 (555) 901-2345",
+      "email": "isabella.r@example.com",
+      "skills": ["Azure", "Cloud Architecture", "DevOps", ".NET"],
+      "resume": "https://example.com/resume/isabella-romano",
+      "linkedin": "https://linkedin.com/in/isabella-r",
+      "pastExperience": "11 years in cloud solutions",
+      "certificates": ["Azure Solutions Architect", "DevOps Expert"],
+      "pricing": {
+        "hourly": 170,
+        "daily": 1250
+      },
+      "availability": "Weekdays",
+      "travelPreference": "Remote",
+      "adminMetadata": {
+        "communicationScore": 95,
+        "expertiseScore": 93,
+        "redFlags": [],
+        "priority": 86,
+        "comments": "Excellent cloud architecture skills"
+      }
+    },
+    {
+      "id": 20,
+      "name": "Felix Müller",
+      "phone": "+1 (555) 012-3456",
+      "email": "felix.m@example.com",
+      "skills": ["Rust", "WebAssembly", "Systems Programming"],
+      "resume": "https://example.com/resume/felix-muller",
+      "linkedin": "https://linkedin.com/in/felix-m",
+      "pastExperience": "8 years in systems programming",
+      "certificates": ["Rust Certification", "Low Level Programming"],
+      "pricing": {
+        "hourly": 160,
+        "daily": 1150
+      },
+      "availability": "Flexible",
+      "travelPreference": "Remote",
+      "adminMetadata": {
+        "communicationScore": 88,
+        "expertiseScore": 91,
+        "redFlags": [],
+        "priority": 81,
+        "comments": "Expert in systems programming and WebAssembly"
+      }
+    },
+    {
+      "id": 21,
+      "name": "Sophia Lee",
+      "phone": "+1 (555) 123-4567",
+      "email": "sophia.l@example.com",
+      "skills": ["Flutter", "Dart", "Mobile Architecture", "Firebase"],
+      "resume": "https://example.com/resume/sophia-lee",
+      "linkedin": "https://linkedin.com/in/sophia-l",
+      "pastExperience": "6 years in cross-platform development",
+      "certificates": ["Google Flutter Developer", "Firebase Expert"],
+      "pricing": {
+        "hourly": 140,
+        "daily": 1000
+      },
+      "availability": "Full Time",
+      "travelPreference": "Hybrid",
+      "adminMetadata": {
+        "communicationScore": 92,
+        "expertiseScore": 88,
+        "redFlags": [],
+        "priority": 78,
+        "comments": "Specialized in Flutter development"
+      }
+    },
+    {
+      "id": 22,
+      "name": "Oliver Smith",
+      "phone": "+1 (555) 234-5678",
+      "email": "oliver.s@example.com",
+      "skills": ["Go", "Microservices", "gRPC", "Docker"],
+      "resume": "https://example.com/resume/oliver-smith",
+      "linkedin": "https://linkedin.com/in/oliver-s",
+      "pastExperience": "7 years in backend development",
+      "certificates": ["Go Developer", "Microservices Architecture"],
+      "pricing": {
+        "hourly": 155,
+        "daily": 1100
+      },
+      "availability": "Weekdays",
+      "travelPreference": "Remote",
+      "adminMetadata": {
+        "communicationScore": 90,
+        "expertiseScore": 89,
+        "redFlags": [],
+        "priority": 80,
+        "comments": "Strong Go and microservices expertise"
+      }
+    },
+    {
+      "id": 23,
+      "name": "Aisha Patel",
+      "phone": "+1 (555) 345-6789",
+      "email": "aisha.p@example.com",
+      "skills": ["Salesforce", "Apex", "Lightning Web Components"],
+      "resume": "https://example.com/resume/aisha-patel",
+      "linkedin": "https://linkedin.com/in/aisha-p",
+      "pastExperience": "9 years in Salesforce development",
+      "certificates": [
+        "Salesforce Platform Developer II",
+        "Admin Certification"
+      ],
+      "pricing": {
+        "hourly": 165,
+        "daily": 1200
+      },
+      "availability": "Flexible",
+      "travelPreference": "Hybrid",
+      "adminMetadata": {
+        "communicationScore": 94,
+        "expertiseScore": 92,
+        "redFlags": [],
+        "priority": 84,
+        "comments": "Salesforce development expert"
+      }
+    },
+    {
+      "id": 24,
+      "name": "Lucas Santos",
+      "phone": "+1 (555) 456-7890",
+      "email": "lucas.s@example.com",
+      "skills": ["Vue.js", "Nuxt.js", "TypeScript", "Node.js"],
+      "resume": "https://example.com/resume/lucas-santos",
+      "linkedin": "https://linkedin.com/in/lucas-s",
+      "pastExperience": "5 years in frontend development",
+      "certificates": ["Vue.js Certification", "Node.js Developer"],
+      "pricing": {
+        "hourly": 135,
+        "daily": 950
+      },
+      "availability": "Full Time",
+      "travelPreference": "Remote",
+      "adminMetadata": {
+        "communicationScore": 91,
+        "expertiseScore": 87,
+        "redFlags": [],
+        "priority": 76,
+        "comments": "Vue.js specialist with strong TypeScript skills"
+      }
+    },
+    {
+      "id": 25,
+      "name": "Anna Kowalski",
+      "phone": "+1 (555) 567-8901",
+      "email": "anna.k@example.com",
+      "skills": ["Django", "Python", "PostgreSQL", "Redis"],
+      "resume": "https://example.com/resume/anna-kowalski",
+      "linkedin": "https://linkedin.com/in/anna-k",
+      "pastExperience": "8 years in web development",
+      "certificates": ["Django Developer", "Python Professional"],
+      "pricing": {
+        "hourly": 145,
+        "daily": 1050
+      },
+      "availability": "Weekdays",
+      "travelPreference": "Hybrid",
+      "adminMetadata": {
+        "communicationScore": 93,
+        "expertiseScore": 90,
+        "redFlags": [],
+        "priority": 82,
+        "comments": "Expert in Django and Python ecosystem"
+      }
+    },
+    {
+      "id": 26,
+      "name": "Thomas Weber",
+      "phone": "+1 (555) 678-9012",
+      "email": "thomas.w@example.com",
+      "skills": ["Quantum Computing", "Q#", "Qiskit", "Python"],
+      "resume": "https://example.com/resume/thomas-weber",
+      "linkedin": "https://linkedin.com/in/thomas-w",
+      "pastExperience": "6 years in quantum computing",
+      "certificates": ["IBM Quantum Developer", "Microsoft Q# Certification"],
+      "pricing": {
+        "hourly": 200,
+        "daily": 1500
+      },
+      "availability": "Flexible",
+      "travelPreference": "Remote",
+      "adminMetadata": {
+        "communicationScore": 92,
+        "expertiseScore": 95,
+        "redFlags": [],
+        "priority": 89,
+        "comments": "Leading expert in quantum computing"
+      }
+    },
+    {
+      "id": 27,
+      "name": "Maya Desai",
+      "phone": "+1 (555) 789-0123",
+      "email": "maya.d@example.com",
+      "skills": ["AR/VR", "Unity", "C#", "3D Modeling"],
+      "resume": "https://example.com/resume/maya-desai",
+      "linkedin": "https://linkedin.com/in/maya-d",
+      "pastExperience": "8 years in AR/VR development",
+      "certificates": ["Unity XR Developer", "Meta AR Developer"],
+      "pricing": {
+        "hourly": 170,
+        "daily": 1250
+      },
+      "availability": "Full Time",
+      "travelPreference": "Hybrid",
+      "adminMetadata": {
+        "communicationScore": 95,
+        "expertiseScore": 93,
+        "redFlags": [],
+        "priority": 85,
+        "comments": "Expert in immersive technologies"
+      }
+    },
+    {
+      "id": 28,
+      "name": "Erik Nielsen",
+      "phone": "+1 (555) 890-1234",
+      "email": "erik.n@example.com",
+      "skills": ["Robotics", "ROS", "C++", "Python"],
+      "resume": "https://example.com/resume/erik-nielsen",
+      "linkedin": "https://linkedin.com/in/erik-n",
+      "pastExperience": "10 years in robotics",
+      "certificates": ["ROS Developer", "Industrial Robotics"],
+      "pricing": {
+        "hourly": 180,
+        "daily": 1300
+      },
+      "availability": "Weekdays",
+      "travelPreference": "On-site",
+      "adminMetadata": {
+        "communicationScore": 88,
+        "expertiseScore": 94,
+        "redFlags": [],
+        "priority": 86,
+        "comments": "Specialized in robotics and automation"
+      }
+    },
+    {
+      "id": 29,
+      "name": "Julia Chang",
+      "phone": "+1 (555) 901-2345",
+      "email": "julia.c@example.com",
+      "skills": ["Kotlin", "Android", "Jetpack Compose", "Firebase"],
+      "resume": "https://example.com/resume/julia-chang",
+      "linkedin": "https://linkedin.com/in/julia-c",
+      "pastExperience": "7 years in Android development",
+      "certificates": ["Google Android Developer", "Kotlin Expert"],
+      "pricing": {
+        "hourly": 150,
+        "daily": 1100
+      },
+      "availability": "Full Time",
+      "travelPreference": "Remote",
+      "adminMetadata": {
+        "communicationScore": 93,
+        "expertiseScore": 90,
+        "redFlags": [],
+        "priority": 81,
+        "comments": "Modern Android development specialist"
+      }
+    },
+    {
+      "id": 30,
+      "name": "Victor Ivanov",
+      "phone": "+1 (555) 012-3456",
+      "email": "victor.i@example.com",
+      "skills": ["Elixir", "Phoenix", "Erlang", "OTP"],
+      "resume": "https://example.com/resume/victor-ivanov",
+      "linkedin": "https://linkedin.com/in/victor-i",
+      "pastExperience": "9 years in distributed systems",
+      "certificates": ["Erlang Solutions Certified", "OTP Expert"],
+      "pricing": {
+        "hourly": 165,
+        "daily": 1200
+      },
+      "availability": "Flexible",
+      "travelPreference": "Remote",
+      "adminMetadata": {
+        "communicationScore": 89,
+        "expertiseScore": 92,
+        "redFlags": [],
+        "priority": 83,
+        "comments": "Expert in fault-tolerant systems"
+      }
+    },
+    {
+      "id": 31,
+      "name": "Fatima Al-Sayed",
+      "phone": "+1 (555) 123-4567",
+      "email": "fatima.a@example.com",
+      "skills": ["Data Visualization", "D3.js", "Three.js", "WebGL"],
+      "resume": "https://example.com/resume/fatima-alsayed",
+      "linkedin": "https://linkedin.com/in/fatima-a",
+      "pastExperience": "6 years in data visualization",
+      "certificates": ["Data Visualization Expert", "WebGL Specialist"],
+      "pricing": {
+        "hourly": 145,
+        "daily": 1050
+      },
+      "availability": "Weekdays",
+      "travelPreference": "Hybrid",
+      "adminMetadata": {
+        "communicationScore": 94,
+        "expertiseScore": 89,
+        "redFlags": [],
+        "priority": 79,
+        "comments": "Creative data visualization expert"
+      }
+    },
+    {
+      "id": 32,
+      "name": "Ricardo Torres",
+      "phone": "+1 (555) 234-5678",
+      "email": "ricardo.t@example.com",
+      "skills": ["Scala", "Akka", "Apache Spark", "Hadoop"],
+      "resume": "https://example.com/resume/ricardo-torres",
+      "linkedin": "https://linkedin.com/in/ricardo-t",
+      "pastExperience": "8 years in distributed computing",
+      "certificates": ["Lightbend Scala", "Databricks Platform"],
+      "pricing": {
+        "hourly": 175,
+        "daily": 1250
+      },
+      "availability": "Full Time",
+      "travelPreference": "Remote",
+      "adminMetadata": {
+        "communicationScore": 90,
+        "expertiseScore": 93,
+        "redFlags": [],
+        "priority": 84,
+        "comments": "Expert in distributed data processing"
+      }
+    },
+    {
+      "id": 33,
+      "name": "Naomi Yamamoto",
+      "phone": "+1 (555) 345-6789",
+      "email": "naomi.y@example.com",
+      "skills": ["GraphQL", "Apollo", "Node.js", "MongoDB"],
+      "resume": "https://example.com/resume/naomi-yamamoto",
+      "linkedin": "https://linkedin.com/in/naomi-y",
+      "pastExperience": "5 years in API development",
+      "certificates": ["Apollo Graph Developer", "MongoDB Professional"],
+      "pricing": {
+        "hourly": 140,
+        "daily": 1000
+      },
+      "availability": "Flexible",
+      "travelPreference": "Remote",
+      "adminMetadata": {
+        "communicationScore": 92,
+        "expertiseScore": 88,
+        "redFlags": [],
+        "priority": 78,
+        "comments": "Strong API development background"
+      }
+    },
+    {
+      "id": 34,
+      "name": "Benjamin Cohen",
+      "phone": "+1 (555) 456-7890",
+      "email": "benjamin.c@example.com",
+      "skills": ["Elasticsearch", "Kibana", "Logstash", "Beats"],
+      "resume": "https://example.com/resume/benjamin-cohen",
+      "linkedin": "https://linkedin.com/in/benjamin-c",
+      "pastExperience": "7 years in search and analytics",
+      "certificates": ["Elastic Certified Engineer", "ELK Stack Expert"],
+      "pricing": {
+        "hourly": 160,
+        "daily": 1150
+      },
+      "availability": "Weekdays",
+      "travelPreference": "Hybrid",
+      "adminMetadata": {
+        "communicationScore": 91,
+        "expertiseScore": 90,
+        "redFlags": [],
+        "priority": 82,
+        "comments": "Search and analytics specialist"
+      }
+    },
+    {
+      "id": 35,
+      "name": "Lena Petrova",
+      "phone": "+1 (555) 567-8901",
+      "email": "lena.p@example.com",
+      "skills": ["Computer Vision", "OpenCV", "TensorFlow", "PyTorch"],
+      "resume": "https://example.com/resume/lena-petrova",
+      "linkedin": "https://linkedin.com/in/lena-p",
+      "pastExperience": "9 years in computer vision",
+      "certificates": ["OpenCV Certification", "Deep Learning Expert"],
+      "pricing": {
+        "hourly": 180,
+        "daily": 1300
+      },
+      "availability": "Full Time",
+      "travelPreference": "Remote",
+      "adminMetadata": {
+        "communicationScore": 88,
+        "expertiseScore": 95,
+        "redFlags": [],
+        "priority": 87,
+        "comments": "Leading computer vision expert"
+      }
+    },
+    {
+      "id": 36,
+      "name": "Ahmed Hassan",
+      "phone": "+1 (555) 678-9012",
+      "email": "ahmed.h@example.com",
+      "skills": ["AWS", "Terraform", "Ansible", "CloudFormation"],
+      "resume": "https://example.com/resume/ahmed-hassan",
+      "linkedin": "https://linkedin.com/in/ahmed-h",
+      "pastExperience": "8 years in cloud infrastructure",
+      "certificates": ["AWS Solutions Architect", "HashiCorp Certified"],
+      "pricing": {
+        "hourly": 170,
+        "daily": 1250
+      },
+      "availability": "Weekdays",
+      "travelPreference": "Remote",
+      "adminMetadata": {
+        "communicationScore": 93,
+        "expertiseScore": 92,
+        "redFlags": [],
+        "priority": 85,
+        "comments": "Infrastructure as Code expert"
+      }
+    },
+    {
+      "id": 37,
+      "name": "Charlotte Wilson",
+      "phone": "+1 (555) 789-0123",
+      "email": "charlotte.w@example.com",
+      "skills": ["Angular", "RxJS", "NgRx", "Material Design"],
+      "resume": "https://example.com/resume/charlotte-wilson",
+      "linkedin": "https://linkedin.com/in/charlotte-w",
+      "pastExperience": "6 years in frontend development",
+      "certificates": ["Angular GDE", "RxJS Expert"],
+      "pricing": {
+        "hourly": 150,
+        "daily": 1100
+      },
+      "availability": "Flexible",
+      "travelPreference": "Hybrid",
+      "adminMetadata": {
+        "communicationScore": 95,
+        "expertiseScore": 89,
+        "redFlags": [],
+        "priority": 81,
+        "comments": "Angular ecosystem specialist"
+      }
+    },
+    {
+      "id": 38,
+      "name": "Diego Ramirez",
+      "phone": "+1 (555) 890-1234",
+      "email": "diego.r@example.com",
+      "skills": ["Spring Boot", "Kotlin", "Microservices", "Docker"],
+      "resume": "https://example.com/resume/diego-ramirez",
+      "linkedin": "https://linkedin.com/in/diego-r",
+      "pastExperience": "7 years in backend development",
+      "certificates": ["Spring Professional", "Kotlin Developer"],
+      "pricing": {
+        "hourly": 155,
+        "daily": 1150
+      },
+      "availability": "Full Time",
+      "travelPreference": "Remote",
+      "adminMetadata": {
+        "communicationScore": 90,
+        "expertiseScore": 91,
+        "redFlags": [],
+        "priority": 83,
+        "comments": "Modern Java ecosystem expert"
+      }
+    },
+    {
+      "id": 39,
+      "name": "Emma Brown",
+      "phone": "+1 (555) 901-2345",
+      "email": "emma.b@example.com",
+      "skills": ["WordPress", "PHP", "WooCommerce", "ACF"],
+      "resume": "https://example.com/resume/emma-brown",
+      "linkedin": "https://linkedin.com/in/emma-b",
+      "pastExperience": "5 years in WordPress development",
+      "certificates": ["WordPress Developer", "WooCommerce Expert"],
+      "pricing": {
+        "hourly": 120,
+        "daily": 900
+      },
+      "availability": "Weekdays",
+      "travelPreference": "Remote",
+      "adminMetadata": {
+        "communicationScore": 94,
+        "expertiseScore": 87,
+        "redFlags": [],
+        "priority": 76,
+        "comments": "WordPress development specialist"
+      }
+    },
+    {
+      "id": 40,
+      "name": "Alexei Volkov",
+      "phone": "+1 (555) 012-3456",
+      "email": "alexei.v@example.com",
+      "skills": ["Unity", "C#", "Game Design", "AR/VR"],
+      "resume": "https://example.com/resume/alexei-volkov",
+      "linkedin": "https://linkedin.com/in/alexei-v",
+      "pastExperience": "9 years in game development",
+      "certificates": ["Unity Certified Professional", "VR Development"],
+      "pricing": {
+        "hourly": 165,
+        "daily": 1200
+      },
+      "availability": "Flexible",
+      "travelPreference": "Hybrid",
+      "adminMetadata": {
+        "communicationScore": 89,
+        "expertiseScore": 93,
+        "redFlags": [],
+        "priority": 84,
+        "comments": "Experienced game developer"
+      }
+    },
+    {
+      "id": 41,
+      "name": "Sofia Moretti",
+      "phone": "+1 (555) 123-4567",
+      "email": "sofia.m@example.com",
+      "skills": ["iOS", "Swift", "SwiftUI", "Core ML"],
+      "resume": "https://example.com/resume/sofia-moretti",
+      "linkedin": "https://linkedin.com/in/sofia-m",
+      "pastExperience": "8 years in iOS development",
+      "certificates": ["Apple Developer Academy", "Core ML Expert"],
+      "pricing": {
+        "hourly": 160,
+        "daily": 1150
+      },
+      "availability": "Full Time",
+      "travelPreference": "Remote",
+      "adminMetadata": {
+        "communicationScore": 92,
+        "expertiseScore": 90,
+        "redFlags": [],
+        "priority": 82,
+        "comments": "iOS development expert"
+      }
+    },
+    {
+      "id": 42,
+      "name": "James Wilson",
+      "phone": "+1 (555) 234-5678",
+      "email": "james.w@example.com",
+      "skills": ["DevSecOps", "Security", "CI/CD", "Kubernetes"],
+      "resume": "https://example.com/resume/james-wilson",
+      "linkedin": "https://linkedin.com/in/james-w",
+      "pastExperience": "10 years in security",
+      "certificates": ["CISSP", "Kubernetes Security"],
+      "pricing": {
+        "hourly": 175,
+        "daily": 1300
+      },
+      "availability": "Weekdays",
+      "travelPreference": "Hybrid",
+      "adminMetadata": {
+        "communicationScore": 91,
+        "expertiseScore": 94,
+        "redFlags": [],
+        "priority": 86,
+        "comments": "Security and DevOps expert"
+      }
+    },
+    {
+      "id": 43,
+      "name": "Nina Patel",
+      "phone": "+1 (555) 345-6789",
+      "email": "nina.p@example.com",
+      "skills": ["Performance Engineering", "Load Testing", "Monitoring"],
+      "resume": "https://example.com/resume/nina-patel",
+      "linkedin": "https://linkedin.com/in/nina-p",
+      "pastExperience": "7 years in performance engineering",
+      "certificates": ["Performance Testing", "Site Reliability"],
+      "pricing": {
+        "hourly": 155,
+        "daily": 1100
+      },
+      "availability": "Flexible",
+      "travelPreference": "Remote",
+      "adminMetadata": {
+        "communicationScore": 90,
+        "expertiseScore": 91,
+        "redFlags": [],
+        "priority": 83,
+        "comments": "Performance optimization specialist"
+      }
+    },
+    {
+      "id": 44,
+      "name": "Lars Anderson",
+      "phone": "+1 (555) 456-7890",
+      "email": "lars.a@example.com",
+      "skills": ["Rust", "Systems Programming", "WebAssembly"],
+      "resume": "https://example.com/resume/lars-anderson",
+      "linkedin": "https://linkedin.com/in/lars-a",
+      "pastExperience": "6 years in systems programming",
+      "certificates": ["Rust Developer", "WASM Expert"],
+      "pricing": {
+        "hourly": 165,
+        "daily": 1200
+      },
+      "availability": "Full Time",
+      "travelPreference": "Remote",
+      "adminMetadata": {
+        "communicationScore": 88,
+        "expertiseScore": 92,
+        "redFlags": [],
+        "priority": 84,
+        "comments": "Systems programming specialist"
+      }
+    },
+    {
+      "id": 45,
+      "name": "Maria Rodriguez",
+      "phone": "+1 (555) 567-8901",
+      "email": "maria.r@example.com",
+      "skills": ["Accessibility", "WCAG", "Frontend", "Testing"],
+      "resume": "https://example.com/resume/maria-rodriguez",
+      "linkedin": "https://linkedin.com/in/maria-r",
+      "pastExperience": "5 years in accessibility",
+      "certificates": ["IAAP CPWA", "Section 508"],
+      "pricing": {
+        "hourly": 145,
+        "daily": 1050
+      },
+      "availability": "Weekdays",
+      "travelPreference": "Hybrid",
+      "adminMetadata": {
+        "communicationScore": 95,
+        "expertiseScore": 89,
+        "redFlags": [],
+        "priority": 80,
+        "comments": "Accessibility expert"
+      }
+    },
+    {
+      "id": 46,
+      "name": "Hiroshi Sato",
+      "phone": "+1 (555) 678-9012",
+      "email": "hiroshi.s@example.com",
+      "skills": ["Blockchain", "Ethereum", "Smart Contracts"],
+      "resume": "https://example.com/resume/hiroshi-sato",
+      "linkedin": "https://linkedin.com/in/hiroshi-s",
+      "pastExperience": "5 years in blockchain",
+      "certificates": ["Ethereum Developer", "DeFi Expert"],
+      "pricing": {
+        "hourly": 180,
+        "daily": 1300
+      },
+      "availability": "Flexible",
+      "travelPreference": "Remote",
+      "adminMetadata": {
+        "communicationScore": 89,
+        "expertiseScore": 93,
+        "redFlags": [],
+        "priority": 85,
+        "comments": "Blockchain technology expert"
+      }
+    },
+    {
+      "id": 47,
+      "name": "Sarah O'Connor",
+      "phone": "+1 (555) 789-0123",
+      "email": "sarah.o@example.com",
+      "skills": ["Technical Writing", "Documentation", "API Docs"],
+      "resume": "https://example.com/resume/sarah-oconnor",
+      "linkedin": "https://linkedin.com/in/sarah-o",
+      "pastExperience": "8 years in technical writing",
+      "certificates": ["API Documentation", "Technical Writing"],
+      "pricing": {
+        "hourly": 130,
+        "daily": 950
+      },
+      "availability": "Full Time",
+      "travelPreference": "Remote",
+      "adminMetadata": {
+        "communicationScore": 96,
+        "expertiseScore": 88,
+        "redFlags": [],
+        "priority": 79,
+        "comments": "Expert technical writer"
+      }
+    },
+    {
+      "id": 48,
+      "name": "Abdul Rahman",
+      "phone": "+1 (555) 890-1234",
+      "email": "abdul.r@example.com",
+      "skills": ["Data Engineering", "ETL", "Data Warehousing"],
+      "resume": "https://example.com/resume/abdul-rahman",
+      "linkedin": "https://linkedin.com/in/abdul-r",
+      "pastExperience": "9 years in data engineering",
+      "certificates": ["Google Data Engineer", "Snowflake"],
+      "pricing": {
+        "hourly": 170,
+        "daily": 1250
+      },
+      "availability": "Weekdays",
+      "travelPreference": "Hybrid",
+      "adminMetadata": {
+        "communicationScore": 91,
+        "expertiseScore": 92,
+        "redFlags": [],
+        "priority": 84,
+        "comments": "Data pipeline specialist"
+      }
+    },
+    {
+      "id": 49,
+      "name": "Lisa Chen",
+      "phone": "+1 (555) 901-2345",
+      "email": "lisa.c@example.com",
+      "skills": ["UX Research", "User Testing", "Analytics"],
+      "resume": "https://example.com/resume/lisa-chen",
+      "linkedin": "https://linkedin.com/in/lisa-c",
+      "pastExperience": "7 years in UX research",
+      "certificates": ["Google UX Design", "Research Methods"],
+      "pricing": {
+        "hourly": 140,
+        "daily": 1000
+      },
+      "availability": "Flexible",
+      "travelPreference": "Remote",
+      "adminMetadata": {
+        "communicationScore": 94,
+        "expertiseScore": 89,
+        "redFlags": [],
+        "priority": 81,
+        "comments": "Experienced UX researcher"
+      }
+    },
+    {
+      "id": 50,
+      "name": "Marco Rossi",
+      "phone": "+1 (555) 012-3456",
+      "email": "marco.r@example.com",
+      "skills": ["DevOps", "SRE", "Monitoring", "Automation"],
+      "resume": "https://example.com/resume/marco-rossi",
+      "linkedin": "https://linkedin.com/in/marco-r",
+      "pastExperience": "10 years in DevOps/SRE",
+      "certificates": ["AWS DevOps", "Google SRE"],
+      "pricing": {
+        "hourly": 175,
+        "daily": 1300
+      },
+      "availability": "Full Time",
+      "travelPreference": "Remote",
+      "adminMetadata": {
+        "communicationScore": 92,
+        "expertiseScore": 93,
+        "redFlags": [],
+        "priority": 85,
+        "comments": "DevOps and SRE expert"
+      }
     }
   ]
 }
