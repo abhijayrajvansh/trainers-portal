@@ -17,7 +17,7 @@ const mockTrainerData = {
   skills: ["DevOps", "Terraform", "AWS", "Kubernetes"],
   experience: "5 years",
   specialization: "Strength & Conditioning",
-  availability: "Mon-Fri, 9AM-5PM",
+  availability: "Onsite, Weekdays",
   pricing: {
     hourly: 50,
     daily: 300,
