@@ -74,6 +74,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+import { Slider } from "@/components/ui/slider";
 
 interface TrainerData {
   id: number;
@@ -139,11 +140,19 @@ export function TrainerTable({
     pageIndex: 0,
     pageSize: 10,
   });
-  const [availabilityFilter, setAvailabilityFilter] = React.useState<string[]>([]);
+  const [availabilityFilter, setAvailabilityFilter] = React.useState<string[]>(
+    []
+  );
+  const [expertiseFilter, setExpertiseFilter] = React.useState<number>(0);
 
   const handleAvailabilityFilter = (values: string[]) => {
     setAvailabilityFilter(values);
     table.getColumn("availability")?.setFilterValue(values);
+  };
+
+  const handleExpertiseFilter = (values: number[]) => {
+    setExpertiseFilter(values[0]);
+    table.getColumn("adminMetadata.expertiseScore")?.setFilterValue(values[0]);
   };
 
   const columns: ColumnDef<TrainerData>[] = [
@@ -227,7 +236,10 @@ export function TrainerTable({
       ),
       filterFn: (row, id, filterValue) => {
         const selectedAvailabilities = filterValue as string[];
-        return selectedAvailabilities.length === 0 || selectedAvailabilities.includes(row.original.availability);
+        return (
+          selectedAvailabilities.length === 0 ||
+          selectedAvailabilities.includes(row.original.availability)
+        );
       },
     },
     {
@@ -256,6 +268,9 @@ export function TrainerTable({
           {row.original.adminMetadata.expertiseScore}/100
         </div>
       ),
+      filterFn: (row, id, filterValue) => {
+        return row.original.adminMetadata.expertiseScore >= (filterValue as number);
+      },
     },
     {
       id: "actions",
@@ -365,19 +380,23 @@ export function TrainerTable({
               <Label>Search by name</Label>
               <Input
                 placeholder="Enter trainer name..."
-                value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}
+                value={
+                  (table.getColumn("name")?.getFilterValue() as string) ?? ""
+                }
                 onChange={(event) =>
                   table.getColumn("name")?.setFilterValue(event.target.value)
                 }
                 className="w-[250px]"
               />
             </div>
-            
+
             <div className="flex flex-col gap-2">
               <Label>Search by skills</Label>
               <Input
                 placeholder="React, Node.js, TypeScript..."
-                value={(table.getColumn("skills")?.getFilterValue() as string) ?? ""}
+                value={
+                  (table.getColumn("skills")?.getFilterValue() as string) ?? ""
+                }
                 onChange={(event) =>
                   table.getColumn("skills")?.setFilterValue(event.target.value)
                 }
@@ -393,28 +412,43 @@ export function TrainerTable({
                 onValueChange={handleAvailabilityFilter}
                 className="flex gap-1"
               >
-                <ToggleGroupItem 
-                  value="Flexible" 
+                <ToggleGroupItem
+                  value="Flexible"
                   aria-label="Toggle Flexible"
                   className="px-3 text-xs"
                 >
                   Flexible
                 </ToggleGroupItem>
-                <ToggleGroupItem 
-                  value="Weekdays" 
+                <ToggleGroupItem
+                  value="Weekdays"
                   aria-label="Toggle Weekdays"
                   className="px-3 text-xs"
                 >
                   Weekdays
                 </ToggleGroupItem>
-                <ToggleGroupItem 
-                  value="Full Time" 
+                <ToggleGroupItem
+                  value="Full Time"
                   aria-label="Toggle Full Time"
                   className="px-3 text-xs"
                 >
                   Full Time
                 </ToggleGroupItem>
               </ToggleGroup>
+            </div>
+
+            <div className="flex flex-col gap-2 w-[200px]">
+              <div className="flex items-center justify-between">
+                <Label>Min. Expertise</Label>
+                <span className="text-sm text-muted-foreground">{expertiseFilter}/100</span>
+              </div>
+              <Slider
+                defaultValue={[0]}
+                max={100}
+                step={1}
+                value={[expertiseFilter]}
+                onValueChange={handleExpertiseFilter}
+                className="w-full"
+              />
             </div>
           </div>
 
