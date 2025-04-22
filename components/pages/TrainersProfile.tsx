@@ -16,7 +16,7 @@ const mockTrainerData = {
   avatar: "/avatars/trainer1.jpg",
   skills: ["DevOps", "Terraform", "AWS", "Kubernetes"],
   experience: "5 years",
-  specialization: "Strength & Conditioning",
+  specialization: "DevOps, Terraform, AWS, Kubernetes",
   availability: "Onsite, Weekdays",
   pricing: {
     hourly: 50,
