@@ -215,7 +215,16 @@ export function TrainerTable({
     },
     {
       accessorKey: "pricing.hourly",
-      header: "Hourly Rate",
+      header: ({ column }) => (
+        <Button
+          variant="ghost"
+          className="p-0"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          Hourly Rate
+          <ChevronDownIcon className="ml-2 h-4 w-4" />
+        </Button>
+      ),
       cell: ({ row }) => (
         <div className="text-right font-medium">
           ${row.original.pricing.hourly}
