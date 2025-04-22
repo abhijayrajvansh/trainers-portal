@@ -203,6 +203,12 @@ export function TrainerTable({
           )}
         </div>
       ),
+      filterFn: (row, id, filterValue) => {
+        const searchTerm = (filterValue as string).toLowerCase();
+        return row.original.skills.some(skill => 
+          skill.toLowerCase().includes(searchTerm)
+        );
+      }
     },
     {
       accessorKey: "availability",
@@ -344,10 +350,18 @@ export function TrainerTable({
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           <Input
-            placeholder="Filter trainers..."
+            placeholder="Filter by name..."
             value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}
             onChange={(event) =>
               table.getColumn("name")?.setFilterValue(event.target.value)
+            }
+            className="max-w-sm"
+          />
+          <Input
+            placeholder="Filter by skills..."
+            value={(table.getColumn("skills")?.getFilterValue() as string) ?? ""}
+            onChange={(event) =>
+              table.getColumn("skills")?.setFilterValue(event.target.value)
             }
             className="max-w-sm"
           />
