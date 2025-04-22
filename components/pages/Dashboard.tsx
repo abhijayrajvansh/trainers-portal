@@ -1,19 +1,22 @@
 "use client";
 
-import { DataTable } from "@/components/data-table";
-import data from "@/app/dashboard/data.json";
+import { AppSidebar } from "@/components/app-sidebar";
+import { SiteHeader } from "@/components/site-header";
+import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
+import { TrainerTable } from "@/components/trainer-table";
+import jsonData from "./data.json";
 import { useState } from "react";
 import {
-  Drawer,
-  DrawerContent,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerDescription,
-  DrawerFooter,
-} from "@/components/ui/drawer";
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetDescription,
+  SheetFooter,
+  SheetClose,
+} from "@/components/ui/sheet";
 import { Badge } from "@/components/ui/badge";
-import { TrainerTable } from "@/components/trainer-table";
-import { ScrollArea } from "@/components/ui/scroll-area";
+import { Button } from "@/components/ui/button";
 
 interface TrainerData {
   id: number;
@@ -40,181 +43,240 @@ interface TrainerData {
   };
 }
 
-interface DataShape {
-  trainers: TrainerData[];
-}
-
-export function Dashboard() {
+export default function Page() {
   const [selectedTrainer, setSelectedTrainer] = useState<TrainerData | null>(
     null
   );
-  const trainers = (data as DataShape).trainers;
+  const trainers = (jsonData as any).trainers as TrainerData[];
 
   return (
-    <div className="flex flex-1 flex-col">
-      <div className="@container/main flex flex-1 flex-col gap-2">
-        <div className="flex flex-col gap-4 py-4 md:gap-6 md:py-6">
-          <div className="px-4 lg:px-6"></div>
+    <SidebarProvider
+      style={
+        {
+          "--sidebar-width": "calc(var(--spacing) * 72)",
+          "--header-height": "calc(var(--spacing) * 12)",
+        } as React.CSSProperties
+      }
+    >
+      <AppSidebar variant="inset" />
+      <SidebarInset>
+        <SiteHeader />
+        <div className="flex flex-1 flex-col gap-4 p-4 md:gap-8 md:p-10">
+          <div className="flex items-center justify-between">
+            <h1 className="text-2xl font-semibold">Trainers Dashboard</h1>
+          </div>
           <TrainerTable data={trainers} onRowClick={setSelectedTrainer} />
         </div>
-      </div>
+      </SidebarInset>
 
-      <Drawer
+      <Sheet
         open={selectedTrainer !== null}
         onOpenChange={() => setSelectedTrainer(null)}
       >
-        <DrawerContent className="h-[90vh]">
-          <DrawerHeader>
-            <DrawerTitle>{selectedTrainer?.name}</DrawerTitle>
-            <DrawerDescription>Trainer Profile Details</DrawerDescription>
-          </DrawerHeader>
+        <SheetContent
+          side="right"
+          className="w-full sm:max-w-xl overflow-y-auto"
+        >
+          <SheetHeader className="space-y-1 pb-5 border-b">
+            <SheetTitle className="text-2xl">
+              {selectedTrainer?.name}
+            </SheetTitle>
+            <SheetDescription className="text-muted-foreground">
+              Trainer Profile Details
+            </SheetDescription>
+          </SheetHeader>
           {selectedTrainer && (
-            <ScrollArea className="flex-1 px-4">
-              <div className="space-y-6 pb-6">
-                <div className="space-y-4">
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">
-                      Contact Information
-                    </h3>
-                    <div className="space-y-2">
-                      <p>Phone: {selectedTrainer.phone}</p>
-                      <p>Email: {selectedTrainer.email}</p>
-                      <p>
-                        LinkedIn:{" "}
-                        <a
-                          href={selectedTrainer.linkedin}
-                          className="text-blue-600 hover:underline"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Profile
-                        </a>
-                      </p>
+            <div className="flex flex-col gap-6 py-6">
+              <div className="space-y-6">
+                <div className="space-y-3">
+                  <h3 className="text-lg font-semibold tracking-tight">
+                    Contact Information 
+                  </h3>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex items-center gap-2">
+                      <Badge variant="outline" className="w-16">
+                        Phone
+                      </Badge>
+                      <span>{selectedTrainer.phone}</span>
                     </div>
-                  </div>
-
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">Skills</h3>
-                    <div className="flex flex-wrap gap-2">
-                      {selectedTrainer.skills.map((skill, index) => (
-                        <Badge key={index} variant="secondary">
-                          {skill}
-                        </Badge>
-                      ))}
+                    <div className="flex items-center gap-2">
+                      <Badge variant="outline" className="w-16">
+                        Email
+                      </Badge>
+                      <span>{selectedTrainer.email}</span>
                     </div>
-                  </div>
-
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">
-                      Experience & Certifications
-                    </h3>
-                    {selectedTrainer.pastExperience && (
-                      <p className="mb-2">{selectedTrainer.pastExperience}</p>
-                    )}
-                    <div className="flex flex-wrap gap-2">
-                      {selectedTrainer.certificates.map((cert, index) => (
-                        <Badge key={index} variant="outline">
-                          {cert}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">Pricing</h3>
-                    <div className="space-y-2">
-                      <p>Hourly Rate: ${selectedTrainer.pricing.hourly}</p>
-                      <p>Daily Rate: ${selectedTrainer.pricing.daily}</p>
-                    </div>
-                  </div>
-
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">
-                      Availability & Preferences
-                    </h3>
-                    <div className="space-y-2">
-                      <p>Availability: {selectedTrainer.availability}</p>
-                      <p>
-                        Willing to Travel:{" "}
-                        {selectedTrainer.travelPreference === "Remote"
-                          ? "No"
-                          : "Yes"}
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="border-t pt-4">
-                    <h3 className="text-lg font-semibold mb-2">
-                      Admin Section
-                    </h3>
-                    <div className="space-y-3">
-                      <div className="grid grid-cols-2 gap-4">
-                        <div>
-                          <p className="text-sm text-muted-foreground">
-                            Communication Score
-                          </p>
-                          <p className="text-lg font-medium">
-                            {selectedTrainer.adminMetadata.communicationScore}
-                            /100
-                          </p>
-                        </div>
-                        <div>
-                          <p className="text-sm text-muted-foreground">
-                            Expertise Score
-                          </p>
-                          <p className="text-lg font-medium">
-                            {selectedTrainer.adminMetadata.expertiseScore}/100
-                          </p>
-                        </div>
-                      </div>
-                      <div>
-                        <p className="text-sm text-muted-foreground">
-                          Priority Level
-                        </p>
-                        <p className="text-lg font-medium">
-                          {selectedTrainer.adminMetadata.priority}/100
-                        </p>
-                      </div>
-                      {selectedTrainer.adminMetadata.redFlags.length > 0 && (
-                        <div>
-                          <p className="text-sm font-medium text-red-600">
-                            Red Flags
-                          </p>
-                          <ul className="mt-1 list-disc list-inside text-red-600">
-                            {selectedTrainer.adminMetadata.redFlags.map(
-                              (flag, index) => (
-                                <li key={index}>{flag}</li>
-                              )
-                            )}
-                          </ul>
-                        </div>
-                      )}
-                      <div>
-                        <p className="text-sm text-muted-foreground">
-                          Admin Comments
-                        </p>
-                        <p className="mt-1">
-                          {selectedTrainer.adminMetadata.comments}
-                        </p>
-                      </div>
+                    <div className="flex items-center gap-2">
+                      <Badge variant="outline" className="w-16">
+                        LinkedIn
+                      </Badge>
+                      <a
+                        href={selectedTrainer.linkedin}
+                        className="text-primary hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        View Profile
+                      </a>
                     </div>
                   </div>
                 </div>
+
+                <div className="space-y-3">
+                  <h3 className="text-lg font-semibold tracking-tight">
+                    Skills
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    {selectedTrainer.skills.map((skill, index) => (
+                      <Badge key={index} variant="secondary">
+                        {skill}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="space-y-3">
+                  <h3 className="text-lg font-semibold tracking-tight">
+                    Experience & Certifications
+                  </h3>
+                  {selectedTrainer.pastExperience && (
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {selectedTrainer.pastExperience}
+                    </p>
+                  )}
+                  <div className="flex flex-wrap gap-2">
+                    {selectedTrainer.certificates.map((cert, index) => (
+                      <Badge key={index} variant="outline">
+                        {cert}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="space-y-3">
+                  <h3 className="text-lg font-semibold tracking-tight">
+                    Pricing
+                  </h3>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="space-y-1">
+                      <p className="text-sm text-muted-foreground">
+                        Hourly Rate
+                      </p>
+                      <p className="text-2xl font-semibold">
+                        ${selectedTrainer.pricing.hourly}
+                      </p>
+                    </div>
+                    <div className="space-y-1">
+                      <p className="text-sm text-muted-foreground">
+                        Daily Rate
+                      </p>
+                      <p className="text-2xl font-semibold">
+                        ${selectedTrainer.pricing.daily}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="space-y-3">
+                  <h3 className="text-lg font-semibold tracking-tight">
+                    Availability & Preferences
+                  </h3>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="space-y-1">
+                      <p className="text-sm text-muted-foreground">
+                        Availability
+                      </p>
+                      <p className="font-medium">
+                        {selectedTrainer.availability}
+                      </p>
+                    </div>
+                    <div className="space-y-1">
+                      <p className="text-sm text-muted-foreground">
+                        Travel Preference
+                      </p>
+                      <p className="font-medium">
+                        {selectedTrainer.travelPreference}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="space-y-3 border-t pt-6">
+                  <h3 className="text-lg font-semibold tracking-tight">
+                    Admin Section
+                  </h3>
+                  <div className="space-y-4">
+                    <div className="grid grid-cols-3 gap-4">
+                      <div className="space-y-1">
+                        <p className="text-sm text-muted-foreground">
+                          Communication
+                        </p>
+                        <p className="text-xl font-semibold">
+                          {selectedTrainer.adminMetadata.communicationScore}/100
+                        </p>
+                      </div>
+                      <div className="space-y-1">
+                        <p className="text-sm text-muted-foreground">
+                          Expertise
+                        </p>
+                        <p className="text-xl font-semibold">
+                          {selectedTrainer.adminMetadata.expertiseScore}/100
+                        </p>
+                      </div>
+                      <div className="space-y-1">
+                        <p className="text-sm text-muted-foreground">
+                          Priority
+                        </p>
+                        <p className="text-xl font-semibold">
+                          {selectedTrainer.adminMetadata.priority}/100
+                        </p>
+                      </div>
+                    </div>
+                    {selectedTrainer.adminMetadata.redFlags.length > 0 && (
+                      <div className="space-y-2">
+                        <p className="text-sm font-medium text-destructive">
+                          Red Flags:
+                        </p>
+                        <ul className="space-y-1 text-sm text-destructive">
+                          {selectedTrainer.adminMetadata.redFlags.map(
+                            (flag, index) => (
+                              <li
+                                key={index}
+                                className="flex items-center gap-2"
+                              >
+                                <span>•</span>
+                                <span>{flag}</span>
+                              </li>
+                            )
+                          )}
+                        </ul>
+                      </div>
+                    )}
+                    <p className="text-sm text-muted-foreground">
+                      {selectedTrainer.adminMetadata.comments}
+                    </p>
+                  </div>
+                </div>
               </div>
-            </ScrollArea>
+
+              <SheetFooter className="flex-col gap-2 sm:flex-row">
+                <SheetClose asChild>
+                  <Button variant="outline" className="w-full sm:w-auto">
+                    Close
+                  </Button>
+                </SheetClose>
+                <a
+                  href={selectedTrainer.resume}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto"
+                >
+                  <Button className="w-full">View Resume</Button>
+                </a>
+              </SheetFooter>
+            </div>
           )}
-          <DrawerFooter className="border-t">
-            <a
-              href={selectedTrainer?.resume}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full"
-            >
-              View Resume
-            </a>
-          </DrawerFooter>
-        </DrawerContent>
-      </Drawer>
-    </div>
+        </SheetContent>
+      </Sheet>
+    </SidebarProvider>
   );
 }
