@@ -269,7 +269,9 @@ export function TrainerTable({
         </div>
       ),
       filterFn: (row, id, filterValue) => {
-        return row.original.adminMetadata.expertiseScore >= (filterValue as number);
+        return (
+          row.original.adminMetadata.expertiseScore >= (filterValue as number)
+        );
       },
     },
     {
@@ -439,7 +441,9 @@ export function TrainerTable({
             <div className="flex flex-col gap-2 w-[200px]">
               <div className="flex items-center justify-between">
                 <Label>Min. Expertise</Label>
-                <span className="text-sm text-muted-foreground">{expertiseFilter}/100</span>
+                <span className="text-sm text-muted-foreground">
+                  {expertiseFilter}/100
+                </span>
               </div>
               <Slider
                 defaultValue={[0]}
